@@ -15,3 +15,8 @@ def get_dataset(num_samples, num_features):
     # Combine features and targets into a DataFrame
     data = pd.DataFrame(np.column_stack((features, targets)), columns=[f'feature_{i}' for i in range(num_features)] + ['target'])
     return data
+
+
+def generate_inference(inf_num_samples, num_features):
+    inf_features = np.random.randn(inf_num_samples, num_features)
+    return inf_features

@@ -11,10 +11,16 @@ from src.generate_data import get_dataset
 from src.model_factory import ModelFactory
 
 
+# --------------------------------------------
+# Exercise 1: speed up the code by making use of gpu
+# --------------------------------------------
+
+# Define the number of samples and features (do not change for the exercises)
+num_samples = int(1e6)
+num_features = 100
+
+
 def train():
-    # Define the number of samples and features (do not change for the exercises)
-    num_samples = int(1e6)
-    num_features = 100
     data: pd.DataFrame = get_dataset(num_samples, num_features)
 
     # Split the data into features and targets
@@ -51,4 +57,6 @@ def train():
 
 
 if __name__ == '__main__':
+    # if done correctly, you should be looking at less than 3 seconds for 20 epochs,
+    # and less than 20 for 100 epochs
     train()
